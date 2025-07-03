@@ -1,24 +1,26 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Central de Aplicações", layout="wide")
-st.title("🧭 Central de Aplicativos Streamlit")
+st.set_page_config(page_title="Central de Aplicativos", layout="wide")
+st.title("🚀 Central de Aplicações Streamlit")
 
-# Lista de apps disponíveis
+# Links dos seus apps
 apps = {
     "📥 Baixas CP Protheus": "https://baixascpprotheus-dzywhhuxvrkqdmyd29jafy.streamlit.app/",
     "📑 Cartões Escritório": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/"
 }
 
-# Seletor
-app_selecionado = st.selectbox("Selecione o app que deseja abrir:", list(apps.keys()))
+st.markdown("## Escolha um aplicativo para abrir:")
 
-# Ações
-if st.button("🔗 Abrir em nova aba"):
-    url = apps[app_selecionado]
-    st.markdown(f"[Clique aqui para abrir {app_selecionado}]({url})", unsafe_allow_html=True)
+# Layout em colunas com botões
+col1, col2 = st.columns(2)
 
-if st.button("📥 Abrir integrado aqui na tela"):
-    url = apps[app_selecionado]
-    st.success(f"Carregando: {app_selecionado}")
-    components.iframe(url, height=800, scrolling=True)
+with col1:
+    if st.button("📥 Baixas CP Protheus"):
+        st.markdown(f"[Abrir em nova aba]({apps['📥 Baixas CP Protheus']})", unsafe_allow_html=True)
+        components.iframe(apps["📥 Baixas CP Protheus"], height=800)
+
+with col2:
+    if st.button("📑 Cartões Escritório"):
+        st.markdown(f"[Abrir em nova aba]({apps['📑 Cartões Escritório']})", unsafe_allow_html=True)
+        components.iframe(apps["📑 Cartões Escritório"], height=800)
