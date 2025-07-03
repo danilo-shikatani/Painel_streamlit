@@ -2,13 +2,13 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(page_title="Central de Aplicativos", layout="centered")
-st.title("🧭 Central de Aplicações Streamlit")
+st.title("🧭 Central de Aplicações TESOURARIA")
 st.markdown("Selecione o aplicativo que deseja abrir abaixo:")
 
 # Dicionário com nomes e links dos apps
 apps = {
-    "📥 Baixas CP Protheus": "https://baixascpprotheus-dzywhhuxvrkqdmyd29jafy.streamlit.app/",
-    "📑 Cartões Escritório": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/"
+    "📥 Baixas Contas a Pagar Protheus": "https://baixascpprotheus-dzywhhuxvrkqdmyd29jafy.streamlit.app/",
+    "📑 Cartões Adquirentes": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/"
 }
 
 # Mostrar os botões em sequência (um abaixo do outro)
