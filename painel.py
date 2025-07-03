@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Central de Aplicações", layout="centered")
-st.title("🚀 Central de Aplicações Streamlit")
+st.title("🚀 Central de Aplicações TESOURARIA")
 
 # Estilo dos cards
 st.markdown("""
@@ -32,8 +32,8 @@ st.markdown("""
 
 # Links dos apps
 apps = {
-    "📥 Baixas CP Protheus": "https://baixascpprotheus-dzywhhuxvrkqdmyd29jafy.streamlit.app/",
-    "📑 Cartões Escritório": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/"
+    "📥 Baixas Contas a Pagar Protheus": "https://baixascpprotheus-dzywhhuxvrkqdmyd29jafy.streamlit.app/",
+    "📑 Cartões Adquirentes": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/"
 }
 
 # Exibir cada card com link
