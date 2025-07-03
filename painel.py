@@ -1,6 +1,14 @@
 import streamlit as st
 
 st.set_page_config(page_title="Central de Aplicações", layout="centered")
+
+# Exibir o logo centralizado
+st.markdown("""
+    <div style="text-align: center;">
+        <img src="https://cdn.brandfetch.io/espacolaser.com.br/132b29b7-ef4b-4dc1-8cd1-7c3f1f421c9e" alt="Logo Espaçolaser" width="250"/>
+    </div>
+""", unsafe_allow_html=True)
+
 st.title("🧭 Central de Aplicações TESOURARIA - ESPAÇO LASER")
 
 # Estilo dos cards
