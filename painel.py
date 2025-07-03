@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Central de Aplicações", layout="centered")
-st.title("🚀 Central de Aplicações TESOURARIA")
+st.title("🚀 TESOURARIA")
 
 # Estilo dos cards
 st.markdown("""
