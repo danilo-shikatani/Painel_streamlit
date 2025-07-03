@@ -9,7 +9,7 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-st.title("🧭 Central de Aplicações TESOURARIA - ESPAÇO LASER")
+st.title("Central de Aplicações TESOURARIA - ESPAÇO LASER")
 
 # Estilo dos cards
 st.markdown("""
