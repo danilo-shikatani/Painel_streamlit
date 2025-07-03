@@ -44,7 +44,7 @@ apps = {
     "📑 Cartões Adquirentes": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/",
     "📑 Cartões A LISA": "https://imjbbbremlsq9m9bz22aek.streamlit.app/",
     "📋 Taxa REDE PIX": "https://taxa-rede-ctjhvxph4b7y27dldoucwc.streamlit.app/",
-    "📋 Incentivo SODEXO": "https://incentivosodexo-hjqws5r5ifnnf3k52fzroc.streamlit.app/"
+    "📋 Incentivo SODEXO": "https://incentivosodexo-hjqws5r5ifnnf3k52fzroc.streamlit.app/",
 }
 
 # Exibir cada card com link
