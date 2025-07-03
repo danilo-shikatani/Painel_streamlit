@@ -31,7 +31,7 @@ st.markdown("""
     }
     .app-card a {
         text-decoration: none;
-        font-size: 50px;
+        font-size: 22px;
         color: #000000;
         font-weight: bold;
     }
