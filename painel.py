@@ -34,7 +34,8 @@ st.markdown("""
 apps = {
     "📥 Baixas Contas a Pagar Protheus": "https://baixascpprotheus-dzywhhuxvrkqdmyd29jafy.streamlit.app/",
     "📑 Cartões Adquirentes": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/",
-    "📑 Cartões A LISA": "https://imjbbbremlsq9m9bz22aek.streamlit.app/"
+    "📑 Cartões A LISA": "https://imjbbbremlsq9m9bz22aek.streamlit.app/",
+    "📋 Taxa REDE - PIX": "https://taxa-rede-ctjhvxph4b7y27dldoucwc.streamlit.app/"
 }
 
 # Exibir cada card com link
