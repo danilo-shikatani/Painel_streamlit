@@ -18,7 +18,7 @@ st.markdown("""
         border: 2px solid #D3D3D3;
         border-radius: 15px;
         padding: 25px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         text-align: center;
         transition: all 0.2s ease;
         background-color: #f9f9f9;
@@ -31,7 +31,7 @@ st.markdown("""
     }
     .app-card a {
         text-decoration: none;
-        font-size: 22px;
+        font-size: 50px;
         color: #000000;
         font-weight: bold;
     }
