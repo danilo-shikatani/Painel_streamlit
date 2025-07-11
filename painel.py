@@ -47,6 +47,7 @@ apps_por_categoria = {
     "Tesouraria": {
         "📋 Taxa REDE PIX": "https://taxa-rede-ctjhvxph4b7y27dldoucwc.streamlit.app/",
         "📋 Incentivo SODEXO": "https://incentivosodexo-hjqws5r5ifnnf3k52fzroc.streamlit.app/",
+        "📋 Rendimentos AplicAut": "https://aplicaut-vrhade6riqeeacy99iqtzn.streamlit.app/",
     },
     "Contas a Pagar": {
         "📥 Baixas Contas a Pagar Protheus": "https://baixascpprotheus-dzywhhuxvrkqdmyd29jafy.streamlit.app/",
