@@ -14,39 +14,39 @@ APPS = [
         "descricao": "Automação para baixas de pagamentos no sistema Protheus."
     },
     {
-        "nome": "Conciliação de Cartões",
+        "nome": "Lançamentos Cartões",
         "url": "https://cart-escr-eefyjappnbdzi8vy7qcbn7m.streamlit.app/",
         "categoria": "Contas a Receber",
         "icone": "📑",
-        "descricao": "Relatórios e conciliação de valores de adquirentes de cartão."
+        "descricao": "Valores de adquirentes de cartão agrupado para input Protheus"
     },
     {
         "nome": "Cartões A LISA",
         "url": "https://imjbbbremlsq9m9bz22aek.streamlit.app/",
         "categoria": "Contas a Receber",
         "icone": "📑",
-        "descricao": "Análise detalhada e escrituração dos cartões da A LISA."
+        "descricao": "Valores do repasse Corporeos p/ A LISA ."
     },
     {
         "nome": "Taxas de PIX (REDE)",
         "url": "https://taxa-rede-ctjhvxph4b7y27dldoucwc.streamlit.app/",
         "categoria": "Tesouraria",
         "icone": "📋",
-        "descricao": "Apuração e visualização das taxas de transações PIX da Rede."
+        "descricao": "Apuração e visualização das taxas de transações PIX da Rede, para lançamentos Protheus."
     },
     {
         "nome": "Incentivos SODEXO",
         "url": "https://incentivosodexo-hjqws5r5ifnnf3k52fzroc.streamlit.app/",
         "categoria": "Tesouraria",
         "icone": "📋",
-        "descricao": "Controle e gestão dos pagamentos de incentivos Sodexo."
+        "descricao": "Apuração e formatação para lançamentos de INCENTIVO SODEXO."
     },
     {
         "nome": "Rendimentos AplicAut",
         "url": "https://aplicaut-vrhade6riqeeacy99iqtzn.streamlit.app/",
         "categoria": "Tesouraria",
         "icone": "📈",
-        "descricao": "Acompanhamento dos rendimentos de aplicações automáticas."
+        "descricao": "Lançamentos de IR, IOF e rendimentos de aplicações automaticas."
     },
 ]
 
