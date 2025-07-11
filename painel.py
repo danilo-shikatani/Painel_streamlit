@@ -5,6 +5,8 @@ st.set_page_config(page_title="Central de Aplicações", layout="wide")
 
 
 # --- DADOS DOS APLICATIVOS (Estrutura Melhorada) ---
+# Mudei para uma lista de dicionários. Fica mais fácil adicionar novas informações
+# como ícone e descrição para cada app.
 APPS = [
     {
         "nome": "Baixas Contas a Pagar",
@@ -51,71 +53,45 @@ APPS = [
 ]
 
 
-# --- CSS COM A SUA PALETA DE CORES ---
+# --- CSS (Estilo Modernizado) ---
 st.markdown("""
     <style>
-        /* 1. Fundo com a sua imagem corporativa */
+        /* Fundo com gradiente suave */
         .stApp {
-            background: url("https://assets.ellabs.net/images/background-espacolaser.png");
-            background-size: cover; /* Garante que a imagem cubra todo o fundo */
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        
-        /* 2. Título principal com a cor azul corporativa */
-        .main-title {
-            color: #003fc3;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        /* 3. Estilo do Card, mantendo um design limpo mas adaptado */
+        /* Card com efeito de vidro (glassmorphism) */
         .app-card {
-            background: #FFFFFF; /* Fundo branco sólido para melhor legibilidade sobre a imagem */
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
             padding: 25px;
             margin-bottom: 25px;
             text-align: center;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 15px 0 rgba(0, 63, 195, 0.2); /* Sombra com tom azulado */
-            border: 1px solid #E0E0E0;
-            height: 180px; 
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            height: 180px; /* Altura fixa para alinhar os cards na grade */
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .app-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px 0 rgba(0, 63, 195, 0.3);
-            border-color: #003fc3; /* Borda azul ao passar o mouse */
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
         }
         .app-card-title {
             text-decoration: none;
             font-size: 20px;
-            color: #003fc3; /* 4. Título do card com a cor azul */
+            color: #1E2A78; /* Cor mais forte para o título */
             font-weight: bold;
             margin-bottom: 10px;
         }
         .app-card-desc {
             font-size: 14px;
-            color: #333; /* Cor de texto padrão para boa leitura */
+            color: #555;
         }
-        
-        /* 5. Estilo para as abas (Tabs) para combinar */
-        .stTabs [data-baseweb="tab-list"] {
-        	gap: 24px;
-        }
-        .stTabs [data-baseweb="tab"] {
-        	height: 50px;
-            background-color: #f0f2f6;
-            border-radius: 8px;
-        }
-        .stTabs [data-baseweb="tab"]:hover {
-            background-color: #e0e6f2;
-        }
-        .stTabs [aria-selected="true"] {
-            background-color: #003fc3;
-            color: white;
-        }
-        
     </style>
 """, unsafe_allow_html=True)
 
@@ -127,8 +103,7 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Aplica a classe .main-title ao título
-st.markdown('<h1 class="main-title">Central de Aplicações Financeiras</h1>', unsafe_allow_html=True)
+st.title("Central de Aplicações Financeiras")
 st.markdown("<p style='text-align: center; color: grey;'>Seu hub de automações financeiras.</p>", unsafe_allow_html=True)
 
 
@@ -144,15 +119,17 @@ termo_busca = st.text_input(
 # --- LÓGICA DE EXIBIÇÃO EM ABAS E GRADE ---
 categorias = sorted(list(set(app["categoria"] for app in APPS)))
 
+# Filtra os aplicativos com base na busca
 if termo_busca:
     apps_filtrados = [
         app for app in APPS
         if termo_busca.lower() in app["nome"].lower() or termo_busca.lower() in app["descricao"].lower()
     ]
+    # Se houver busca, mostra tudo em uma única grade
     st.subheader(f"Resultados para '{termo_busca}'")
-    cols = st.columns(3)
+    cols = st.columns(3) # Cria 3 colunas para a grade
     for i, app in enumerate(apps_filtrados):
-        with cols[i % 3]:
+        with cols[i % 3]: # Loop entre as 3 colunas
             st.markdown(f"""
                 <a href="{app['url']}" target="_blank" style="text-decoration: none;">
                     <div class="app-card">
@@ -164,13 +141,14 @@ if termo_busca:
     if not apps_filtrados:
         st.warning("Nenhum aplicativo encontrado.")
 else:
+    # Se não houver busca, mostra as abas
     abas = st.tabs(categorias)
     for i, categoria in enumerate(categorias):
         with abas[i]:
             apps_na_categoria = [app for app in APPS if app["categoria"] == categoria]
-            cols = st.columns(3)
+            cols = st.columns(3) # Cria 3 colunas para a grade dentro de cada aba
             for j, app in enumerate(apps_na_categoria):
-                with cols[j % 3]:
+                with cols[j % 3]: # Loop entre as 3 colunas
                     st.markdown(f"""
                         <a href="{app['url']}" target="_blank" style="text-decoration: none;">
                             <div class="app-card">
