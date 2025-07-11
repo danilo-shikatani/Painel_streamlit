@@ -101,7 +101,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Central de Aplicações TESOURARIA")
-st.markdown("<p style='text-align: center; color: grey;'>Seu hub de automações financeiras.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: grey;'>hub de automações financeiras.</p>", unsafe_allow_html=True)
 
 
 # --- FUNCIONALIDADE DE BUSCA ---
