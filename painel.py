@@ -102,10 +102,10 @@ st.markdown("""
 
 
 # Trocamos st.title() por st.markdown() com uma tag <h1> e o estilo de centralização
-st.markdown("<h1 style='text-align: center;'>Central de Aplicações TESOURARIA</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: left;'>Central de Aplicações TESOURARIA</h1>", unsafe_allow_html=True)
 
 # Seu subtítulo já estava correto e centralizado
-st.markdown("<p style='text-align: center; color: grey;'>Seu hub de automações financeiras.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: left; color: grey;'>Seu hub de automações financeiras.</p>", unsafe_allow_html=True)
 
 # O resto do seu código continua aqui...
 
