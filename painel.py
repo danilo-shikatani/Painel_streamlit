@@ -5,8 +5,6 @@ st.set_page_config(page_title="Central de Aplicações", layout="wide")
 
 
 # --- DADOS DOS APLICATIVOS (Estrutura Melhorada) ---
-# Mudei para uma lista de dicionários. Fica mais fácil adicionar novas informações
-# como ícone e descrição para cada app.
 APPS = [
     {
         "nome": "Baixas Contas a Pagar",
@@ -53,38 +51,37 @@ APPS = [
 ]
 
 
-# --- CSS (Estilo Modernizado) ---
+# --- CSS (Estilo Minimalista com Fundo Branco) ---
 st.markdown("""
     <style>
-        /* Fundo com gradiente suave */
+        /* 1. Fundo da página branco */
         .stApp {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: #FFFFFF; 
         }
-        /* Card com efeito de vidro (glassmorphism) */
+
+        /* 2. Estilo do Card ajustado para o fundo branco */
         .app-card {
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 20px;
+            background: #FFFFFF; /* Fundo do card branco sólido */
+            border-radius: 15px;
             padding: 25px;
             margin-bottom: 25px;
             text-align: center;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            height: 180px; /* Altura fixa para alinhar os cards na grade */
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
+            border: 1px solid #EAECEF; /* Borda clara para definição */
+            height: 180px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .app-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+            transform: translateY(-5px); /* Efeito de elevação mais sutil */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada no hover */
         }
         .app-card-title {
             text-decoration: none;
             font-size: 20px;
-            color: #1E2A78; /* Cor mais forte para o título */
+            color: #2c3e50; /* Cor escura para bom contraste no branco */
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -103,7 +100,7 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-st.title("Central de Aplicações TESOURARIA")
+st.title("Central de Aplicações Financeiras")
 st.markdown("<p style='text-align: center; color: grey;'>Seu hub de automações financeiras.</p>", unsafe_allow_html=True)
 
 
@@ -119,17 +116,15 @@ termo_busca = st.text_input(
 # --- LÓGICA DE EXIBIÇÃO EM ABAS E GRADE ---
 categorias = sorted(list(set(app["categoria"] for app in APPS)))
 
-# Filtra os aplicativos com base na busca
 if termo_busca:
     apps_filtrados = [
         app for app in APPS
         if termo_busca.lower() in app["nome"].lower() or termo_busca.lower() in app["descricao"].lower()
     ]
-    # Se houver busca, mostra tudo em uma única grade
     st.subheader(f"Resultados para '{termo_busca}'")
-    cols = st.columns(3) # Cria 3 colunas para a grade
+    cols = st.columns(3)
     for i, app in enumerate(apps_filtrados):
-        with cols[i % 3]: # Loop entre as 3 colunas
+        with cols[i % 3]:
             st.markdown(f"""
                 <a href="{app['url']}" target="_blank" style="text-decoration: none;">
                     <div class="app-card">
@@ -141,14 +136,13 @@ if termo_busca:
     if not apps_filtrados:
         st.warning("Nenhum aplicativo encontrado.")
 else:
-    # Se não houver busca, mostra as abas
     abas = st.tabs(categorias)
     for i, categoria in enumerate(categorias):
         with abas[i]:
             apps_na_categoria = [app for app in APPS if app["categoria"] == categoria]
-            cols = st.columns(3) # Cria 3 colunas para a grade dentro de cada aba
+            cols = st.columns(3)
             for j, app in enumerate(apps_na_categoria):
-                with cols[j % 3]: # Loop entre as 3 colunas
+                with cols[j % 3]:
                     st.markdown(f"""
                         <a href="{app['url']}" target="_blank" style="text-decoration: none;">
                             <div class="app-card">
