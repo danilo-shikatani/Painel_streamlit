@@ -1,7 +1,7 @@
 import streamlit as st
 
 # --- Configuração da Página ---
-st.set_page_config(page_title="Central de Aplicações", layout="wide")
+st.set_page_config(page_title="Central de Aplicações TESOURARIA", layout="wide")
 
 
 # --- DADOS DOS APLICATIVOS (Estrutura Melhorada) ---
