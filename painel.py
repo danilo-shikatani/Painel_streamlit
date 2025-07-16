@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Central de Aplicações", layout="wide")
 
 
-# --- DADOS DOS APLICATIVOS (Estrutura Melhorada) ---
+# --- DADOS DOS APLICATIVOS
 APPS = [
     {
         "nome": "Baixas Contas a Pagar",
@@ -51,7 +51,7 @@ APPS = [
 ]
 
 
-# --- CSS (Estilo Minimalista com Fundo Branco) ---
+# --- CSS  ---
 st.markdown("""
     <style>
         /* 1. Fundo da página branco */
@@ -101,13 +101,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# Trocamos st.title() por st.markdown() com uma tag <h1> e o estilo de centralização
 st.markdown("<h1 style='text-align: left;'>Central de Aplicações TESOURARIA</h1>", unsafe_allow_html=True)
 
-# Seu subtítulo já estava correto e centralizado
+
 st.markdown("<p style='text-align: left; color: grey;'>Seu hub de automações financeiras.</p>", unsafe_allow_html=True)
 
-# O resto do seu código continua aqui...
 
 
 # --- FUNCIONALIDADE DE BUSCA ---
